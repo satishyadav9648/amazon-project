@@ -9,7 +9,6 @@ hello();
 
 const today = dayjs();
 const deliveryDate = today.add(6, 'days');
-console.log(deliveryDate.format('dddd, MMMM D', ));
 
 let cartSummaryHTML = '';
 
@@ -126,7 +125,6 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   });
 });
 
-console.log(document.querySelectorAll('.js-delivery-option').length);
 
 document.querySelectorAll('.js-delivery-option').forEach((element) => {
   element.addEventListener('click', () => {
