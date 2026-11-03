@@ -26,9 +26,10 @@ cart.forEach((cartItem) => {
 
 
   const deliveryOptionId = cartItem.deliveryOptionId;
-  let deliveryOption = deliveryOptions.find(
-    (option) => option.id === cartItem.deliveryOptionId)|| 
-    deliveryOptions[0];
+  let deliveryOption = deliveryOptions[0];
+  deliveryOptions.forEach((option) => {
+    if(option.id === deliveryOptionId) deliveryOption = option;
+  });
 
   const today = dayjs();
   const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
